@@ -48,14 +48,6 @@ function App() {
     // console.log('ERROR!', error);
   }
 
-  const key = useStateProperty(0);
-
-  React.useEffect(() => {
-    const handleResize = () => key.set(key.get + 1);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
   function getRowId(row) {
     return row.name;
   }
@@ -253,7 +245,6 @@ function App() {
   return (
     <DataGrid
       sx={ResponsibleDataGrid}
-      key={key.get}
       apiRef={gridApi}
       rows={rows.get}
       editMode="cell"
