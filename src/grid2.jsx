@@ -1,5 +1,5 @@
-﻿import { Box, ButtonGroup, Button, css } from '@mui/material';
-import { DataGrid, GridCellModes, useGridApiRef } from '@mui/x-data-grid'
+﻿import { Box, ButtonGroup, Button, css, Stack, Typography } from '@mui/material';
+import { DataGrid, GridCellModes, GridRow, useGridApiRef } from '@mui/x-data-grid'
 import React from 'react';
 import { Register, useStateProperty, model } from './model.js';
 
@@ -319,7 +319,8 @@ export function Grid2({ }) {
 		};
 	}, [draggedRowId]);
 
-	return (
+	return (<Stack>
+		<Typography>2</Typography>
 		<DataGrid
 			ref={gridRef}
 			apiRef={gridApi}
@@ -385,9 +386,10 @@ export function Grid2({ }) {
 					)
 				},
 				{ field: 'name', headerName: 'Название', editable: true, sortable: false, flex: 1, valueGetter: (value) => value ?? '' },
+				{ field: 'bit', headerName: 'bit', editable: true, type: 'singleSelect', valueOptions: [1, 2, 3, 4, 5], sortable: false, flex: 1 },
 			]}
 		/>
-	)
+	</Stack>);
 }
 
 const ResponsibleDataGrid = css`

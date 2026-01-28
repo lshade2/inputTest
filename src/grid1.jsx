@@ -3,7 +3,7 @@ import { DataGrid, GridCellModes, useGridApiRef } from '@mui/x-data-grid'
 import React from 'react';
 import { Register, useStateProperty, model } from './model.js';
 
-export function Grid({ }) {
+export function Grid1({ }) {
 
 	const rows = useStateProperty(model);
 
